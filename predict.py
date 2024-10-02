@@ -1,6 +1,10 @@
 import torch
+import json
 
-iris = {0: "Iris Setosa", 1: "Iris Versicolour", 2: "Iris Virginica"}
+with open('classes.json', 'r') as file:
+    iris = json.load(file)
+
+
 
 def Predict(model, input_data):
     test_inputs = torch.tensor([[input_data.SepalLengthCm, 
@@ -14,4 +18,4 @@ def Predict(model, input_data):
 
     _, predicted = torch.max(test_outputs, 1)
 
-    return iris[predicted.item()]
+    return iris[str(predicted.item())]
