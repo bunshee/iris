@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from models import Model
+# from models import Model
 from classes import IrisInput
 from predict import Predict
 import torch
