@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 
+
 class IrisInput(BaseModel):
     SepalLengthCm: float
     SepalWidthCm: float
