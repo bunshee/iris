@@ -1,17 +1,21 @@
 import torch
+from classes import IrisInput
 from fastapi import FastAPI
 
-from classes import IrisInput
-from predict import Predict
+from helpers.predict import Predict
 
-# from models import Model
+# from helpers.models import Model
 
 app = FastAPI()
 
 loaded_model = None
 
 # loaded_model = Model()
+# loaded_model = Model()
 # loaded_model.load_state_dict(torch.load('./saved_models/iris_model.pth'))
+
+loaded_model = torch.jit.load("./saved_models/traced_model.pth")
+loaded_model.eval()
 
 loaded_model = torch.jit.load("./saved_models/traced_model.pth")
 loaded_model.eval()
