@@ -1,0 +1,20 @@
+repos:
+  - repo: https://github.com/psf/black
+    rev: 24.10.0
+    hooks:
+      - id: black
+        args: [--safe]
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-added-large-files
+      - id: debug-statements
+        language_version: python3
+
+  - repo: https://github.com/asottile/reorder-python-imports
+    rev: v3.14.0
+    hooks:
+      - id: reorder-python-imports

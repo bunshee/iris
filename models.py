@@ -1,6 +1,7 @@
 import torch.nn as nn
 import torch.nn.functional as f
 
+
 class Model(nn.Module):
     def __init__(self, in_feat=4, h1=12, h2=12, h3=7, out_feat=3):
         super().__init__()
